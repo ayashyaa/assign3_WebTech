@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Home — Interior Design Studio</title>
+  <link rel="stylesheet" href="main.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+
+<!-- Grid container -->
+<div class="grid-container">
+
+<header id="top" class="main-nav">
+    <a class="logo" href="main.html">La Home</a>
+    
+    <button class="hamburger" aria-label="Toggle navigation">&#9776;</button> 
+
+    <nav class="nav-links-container">
+        <a class="nav-link" href="main.html">Home</a>
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="about.html">About Studio</a>
+        <a class="nav-link" href="estimate.html">Request Estimate</a>
+    </nav>
+</header>
+
+  
+ <!-- Sidebar -->
+<aside class="sidebar">
+  <h3>Contact</h3>
+  <p>📞 +7 777 123 4567</p>
+  <p>✉ info@lahome.com</p>
+
+  <h3>Follow Us</h3>
+  <div class="sidebar-social">
+    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="#"><i class="fab fa-pinterest fa-2x"></i></a>
+  </div>
+</aside>
+
+
+
+
+
+
+  <!-- Main content -->
+  <main class="main-content">
+    <section id="hero" aria-label="Cover">
+      <div class="hero-content">
+          <h1>La Home Studio</h1>
+          <p>Exteriors and interiors you fall in love with.</p>
+      </div>
+    </section>
+
+    <section class="welcome">
+      <h2>Welcome to La Home Studio</h2>
+      <p>We design spaces that inspire and comfort. Explore our portfolio to see how we transform ideas into reality.</p>
+    </section>
+
+    <section id="services">
+      <h2>Key Services</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="interior.jpg" alt="Interior Design">
+          <h3>Interior Design</h3>
+          <p>Modern and functional interiors for your home and office.</p>
+          <button>More</button>
+        </div>
+        <div class="card">
+          <img src="architecture.jpg" alt="Architectural Design">
+          <h3>Architectural design</h3>
+          <p>Individual architectural solutions that combine aesthetics and practicality.</p>
+          <button>More</button>
+        </div>
+        <div class="card">
+          <img src="supervision.jpg" alt="Project Supervision">
+          <h3>Author's supervision</h3>
+          <p>Monitoring the implementation of projects to ensure that the results correspond to the plan.</p>
+          <button>More</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-choose-us">
+      <h2>Why Choose Us?</h2>
+      <div class="choose-container">
+        <div class="choose-text">
+          <h3>Friendliness</h3>
+          <p>Every client is a friend to us. We're always willing to accommodate and find common ground under any circumstances.</p>
+          <h3>Experience</h3>
+          <p>Our extensive experience allows us to take on even the most complex projects and execute them flawlessly.</p>
+          <h3>Deadlines</h3>
+          <p>Last but not least, sometimes you need a high-quality project in a short timeframe. That's where we come in :)</p>
+        </div>
+        <div class="choose-image">
+          <img src="page.jpeg" alt="Why choose us image">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; La Home Studio, 2025. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="#top">Back to top</a>
+      <a href="estimate.html">Request Estimate</a>
+    </nav>
+  </footer>
+
+</div> <!-- end grid-container -->
+
+
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const header = document.querySelector('.main-nav');
+
+        hamburger.addEventListener('click', () => {
+            // Переключает класс 'active' на header, чтобы показать/скрыть меню
+            header.classList.toggle('active');
+        });
+    });
+
+    
+</script> 
+</body>
+</html>

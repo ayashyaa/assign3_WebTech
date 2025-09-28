@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+  <title>La Home — Request an Estimate</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="top">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="La Home Logo" width="36" height="36">
+    </div>
+    <nav aria-label="Main navigation">
+      <a class="nav_links" href="main.html">Home</a>
+      <a class="nav_links" href="about.html">About Studio</a>
+      <a class="nav_links" href="about.html#founder">Leila</a>
+      <a class="nav_links" href="about.html#team">Team</a>
+      <a class="nav_links" href="portfolio.html">Portfolio</a>
+      <a class="nav_links" href="estimate.html">Request Estimate</a>
+    </nav>
+  </div>
+</header>
+  
+  <section id="hero">
+    <h1>Request an Estimate</h1>
+    <p>Tell us about your project — we’ll prepare a personalized estimate for you.</p>
+  </section>
+
+  <section id="estimate-form" aria-label="Estimate request form">
+    <h2>Project Details</h2>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Contact Information</legend>
+        <label for="name">Full Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="phone">Phone:</label><br />
+        <input type="tel" id="phone" name="phone" /><br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Project Information</legend>
+        <label for="project-type">Project Type:</label><br />
+        <select id="project-type" name="project-type" required>
+          <option value="">-- Select --</option>
+          <option value="apartment">Apartment Interior</option>
+          <option value="house">House Interior</option>
+          <option value="commercial">Commercial Space</option>
+          <option value="exterior">Exterior Design</option>
+          <option value="other">Other</option>
+        </select><br /><br />
+
+        <label for="area">Approximate Area (m²):</label><br />
+        <input type="number" id="area" name="area" min="1" /><br /><br />
+
+        <label for="budget">Estimated Budget:</label><br />
+        <input type="text" id="budget" name="budget" /><br /><br />
+
+        <label for="deadline">Desired Deadline:</label><br />
+        <input type="date" id="deadline" name="deadline" /><br /><br />
+
+        <label for="message">Additional Details:</label><br />
+        <textarea id="message" name="message" rows="6" placeholder="Tell us more about your vision..."></textarea>
+      </fieldset>
+
+      <br />
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
+
+  <footer aria-label="Footer">
+    <p>&copy; Asima Abdikarimova, Ayazhan Ayetova </p>
+    <nav aria-label="Footer navigation">
+      <a href="about.html">Back to About Studio</a>
+      <a href="#hero">Back to top</a>
+    </nav>
+  </footer>
+</body>
+</html>

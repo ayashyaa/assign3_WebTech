@@ -1,0 +1,610 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: rgb(255, 248, 240);
+  margin: 0;
+  padding: 0;
+  padding-top: 70px;
+}
+
+section {
+  width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #222;
+  border-bottom: 2px solid #D1495B;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+
+
+
+/* navigation bar  */
+
+/* 1. Стили для внешнего контейнера (Header), оставляем ваши стили позиционирования */
+#top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; 
+  background: #003D5B;
+  padding: 1rem;
+}
+
+/* Стили для логотипа */
+.logo {
+    color: rgb(255, 248, 240);
+    font-size: 1.5em; 
+    font-weight: bold;
+    text-decoration: none;
+    /* Убедимся, что <a> внутри .logo тоже имеет нужный цвет */
+}
+
+/* ДОПОЛНИТЬ: Переопределение фона Bootstrap на ваш цвет */
+.navbar {
+    background-color: #003D5B !important; 
+    /* !important нужен, чтобы перебить встроенный фон Bootstrap. */
+}
+
+
+/* Ваши стили для ссылок (с небольшим изменением: убрал margin-right, так как теперь есть gap) */
+.nav_links {
+  color: rgb(255, 248, 240);
+  font-weight: 500;
+  text-decoration: none;
+  /* margin-right: 10px; -- УДАЛЕНО, заменено на gap в .nav-links-container */
+}
+
+.nav_links:hover {
+  color: #D1495B;
+}
+
+/* ========================================= */
+/* FIX: 1. NAVIGATION BAR (Устранение обрезания текста) */
+/* ========================================= */
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #003D5B;
+    box-sizing: border-box; 
+    padding: 1rem 2rem; 
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    z-index: 9999;
+}
+
+.logo {
+    color: rgb(255, 248, 240);
+    font-size: 1.5em; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links-container {
+    display: flex; 
+    gap: 20px; 
+}
+
+.main-nav .nav-link {
+    color: rgb(255, 248, 240);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav .nav-link:hover {
+    color: #D1495B;
+}
+
+
+
+
+
+.hamburger {
+    display: none; 
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: rgb(255, 248, 240);
+    cursor: pointer;
+    z-index: 10000; 
+}
+
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-wrap: wrap; 
+    }
+
+    .hamburger {
+        display: block; 
+    }
+
+    .nav-links-container {
+        width: 100%; 
+        flex-direction: column; 
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .main-nav.active .nav-links-container {
+        max-height: 300px; 
+        padding-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Hero section */
+#hero {
+  position: relative;
+  width: 90%;
+  height: 400px; /* секция фиксированной высоты */
+  background: url('background.jpeg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* чтобы затемнение не выходило за пределы */
+}
+
+/* затемнение фона */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* ← именно это затемняет фото */
+  z-index: 0;
+}
+
+/* Текстовый блок */
+.hero-content {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 80%;  
+  z-index: 1;      /* текст поверх overlay */
+  color: white;
+}
+
+/* Заголовок */
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Подзаголовок */
+#hero p {
+  font-size: 1.3rem;
+}
+
+/* 📱 Адаптив под мобильные устройства */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+/* Services Section */
+#services {
+  padding: 50px 10%;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+#services h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; 
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 calc(33.333% - 20px); /* 3 в ряд */
+  min-width: 250px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  margin: 0 15px 15px;
+  flex-grow: 1;
+}
+
+.card button {
+  margin: 15px;
+  padding: 10px 15px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #555;
+}
+
+/* Hover эффект */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* 📟 Планшеты: 2 карточки */
+@media (max-width: 1024px) {
+  .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+/* 📱 Мобильные: 1 карточка */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.why-choose-us {
+  width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 2rem;
+  border-bottom: none;
+}
+
+.choose-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  text-align: left;
+}
+
+.choose-text {
+  flex: 1;
+}
+
+.choose-text h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #003D5B;
+  font-size: 1.3rem;
+}
+
+.choose-text p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.choose-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.choose-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+/* Portfolio Section */
+.portfolio {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.portfolio h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #222;
+  border-bottom: none;
+}
+
+
+
+
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; 
+}
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.portfolio-item img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+.portfolio-item .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 1 колонка на мобильных */
+  }
+}
+
+
+
+
+
+
+
+
+
+form {
+  background: #00798C;
+  padding: 2rem;
+  color: rgb(255, 248, 240);
+  border-radius: 8px;
+}
+
+form fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+form legend {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgb(255, 248, 240);
+  border-radius: 4px;
+}
+
+form button {
+  background: #D1495B;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  color: rgb(255, 248, 240);
+}
+
+form button:hover {
+  background: #a83847;
+}
+
+textarea {
+  resize: vertical;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #003D5B;
+  color: rgb(255, 248, 240);
+  margin-top: 3rem;
+}
+
+footer nav {
+  margin-top: 0.5rem;
+}
+
+footer nav a {
+  color: #D1495B;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+
+
+/* ============================= */
+/* Grid Layout для Task 3 */
+/* ============================= */
+
+/* Контейнер всей страницы */
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 250px 1fr; /* Sidebar и main */
+  grid-template-rows: auto 1fr auto; /* Header, content, footer */
+  gap: 10px;
+}
+
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.main-content {
+  grid-area: main;
+  padding: 1rem;
+}
+.footer {
+  grid-area: footer;
+  background-color: #003D5B;
+  color: rgb(255, 248, 240);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 0;
+}
+
+/* ============================= */
+/* Адаптивность Grid */
+/* ============================= */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .sidebar {
+    margin-top: 1rem;
+  }
+}
+
+.sidebar {
+  position: sticky;
+  top: 80px; /* отступ от верхнего navbar, чтобы не перекрывать */
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+
+.sidebar-social a {
+  margin-right: 10px;
+  color: #003D5B; /* основной цвет */
+  transition: color 0.3s;
+}
+
+.sidebar-social a:hover {
+  color: #D1495B; /* при наведении */
+}
